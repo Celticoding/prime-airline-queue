@@ -6,12 +6,10 @@ const router = express.Router();
 
 router.post('/cancel-book', async (req: Request, res: Response) => {
 
-  console.log('hello')
   try {
     let bookingId = req.body.bookingId;
     
     Queue.queue.push(bookingId);
-    console.log(Queue.queue)
     res.status(200); //Sending code 202 because the action has been queued
     res.send({})
   } catch (e) {

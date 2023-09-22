@@ -4,7 +4,6 @@ import axios from 'axios';
 class BookService {
    
     static async cancelBook() {
-        console.log(Queue.queue)
         if (Queue.queue.length > 0) {
             let bookingId = Queue.queue[0];
             try {
