@@ -8,6 +8,7 @@ router.post('/cancel-book', async (req: Request, res: Response) => {
 
   try {
     let bookingId = req.body.bookingId;
+    
     Queue.queue.push(bookingId);
     res.sendStatus(202); //Sending code 202 because the action has been queued
   } catch (e) {
